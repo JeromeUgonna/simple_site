@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Simple Site</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Light background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+        }
+
+        .container {
+            background-color: #ffffff; /* White background for form */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 40px; /* Increased padding */
+            width: 350px; /* Fixed width */
+            text-align: center; /* Center text */
+        }
+
+        h2 {
+            color: #4A90E2; /* Blue header */
+            margin-bottom: 20px; /* Space below heading */
+            font-size: 24px; /* Larger font size */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; /* Stack inputs */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 12px;
+            margin: 10px 0; /* Spacing between inputs */
+            border: 2px solid #ccc; /* Light gray border */
+            border-radius: 6px; /* Rounded corners for inputs */
+            font-size: 16px; /* Larger font size */
+            transition: border-color 0.3s; /* Transition for border color */
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4A90E2; /* Blue border on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        button {
+            background-color: #4A90E2; /* Primary button color */
+            color: #ffffff; /* White text */
+            border: none;
+            padding: 12px;
+            border-radius: 6px; /* Rounded button */
+            cursor: pointer;
+            font-size: 16px; /* Larger text */
+            transition: background-color 0.3s; /* Transition for background color */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        p {
+            margin-top: 20px; /* Space above paragraph */
+            font-size: 14px; /* Smaller font size */
+        }
+
+        a {
+            color: #4A90E2; /* Link color */
+            text-decoration: none; /* No underline */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Render the fields from UserCreationForm -->
+            <button type="submit">Signup</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #2e8b57;
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        div {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to CodeBlaze Academy</h1>
+        <p>Please <a href="{% url 'login' %}">Login</a> or <a href="{% url 'signup' %}">Signup</a> to continue.</p>
+    </div>
+</body>
+</html>
